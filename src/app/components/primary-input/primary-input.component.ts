@@ -1,6 +1,7 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import {
   ControlValueAccessor,
+  FormGroup,
   NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
 } from '@angular/forms';
@@ -39,9 +40,11 @@ export class PrimaryInputComponent implements ControlValueAccessor {
   writeValue(value: any): void {
     this.value = value;
   }
+
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
+
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
